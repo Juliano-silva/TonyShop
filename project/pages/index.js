@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import Conteúdo from '../components/Conteúdo'
+import Header from '../components/Header'
 export async function getStaticProps() {
 
   const client = createClient({
@@ -20,6 +21,7 @@ export default function Recipes({ skate }) {
   console.log(skate)
   return(
     <div>
+      <Header/>
        {skate.map((skates) => (
        //Aqui eu peguei o titulo
        <Conteúdo key={skates.sys.id} skate={skates}/>
